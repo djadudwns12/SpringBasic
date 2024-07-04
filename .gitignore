@@ -118,5 +118,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+# 확장자가 properties로 끝나는 파일은 commit 하지 않겠다.
+*.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
