@@ -75,9 +75,10 @@ public class HomeController {
 		
 		
 	}
+	// 
 	@RequestMapping("/ex5")
 	public ModelAndView exModelAndView() {
-		
+		// ModelAndView 객체 : 출력될 view와 보내줄 model을 정의 하는 객체
 		System.out.println("exModelAndView.............");
 		
 		Map model = new HashMap<String, String>();
