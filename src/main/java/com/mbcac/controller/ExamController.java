@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mbcac.model.ProductVO;
 
@@ -62,7 +63,7 @@ public class ExamController
 //	}
 	// 파라미터를 Spring Framework가 자동으로 객체로 수집하여 준다.
 	@RequestMapping(value = "/inputProduct" , method = RequestMethod.POST)
-	public void savaProduct(ProductVO p,HashMap<String, Object> map)  // 매개변수를 자동으로 수집하여 준다. vo에 한꺼번에 담아주는 것이 가능하다.
+	public String savaProduct(ProductVO p,HashMap<String, Object> map,RedirectAttributes redirectattributes)  // 매개변수를 자동으로 수집하여 준다. vo에 한꺼번에 담아주는 것이 가능하다.
 	{
 		//  /exam/inputProduct가 post방식으로 호출될때 현재메서드 매핑되도록 
 		System.out.println("savaProduct......");
@@ -72,8 +73,19 @@ public class ExamController
 		
 		System.out.println("p : "+p.toString());
 		System.out.println(map);
+		
+		
+		// p를 서비스단 -> dao단  -> db에 잘 저장했다 치자~~
+		
+		String msg = null;
+		
+		if(p != null) {
+			msg = "success";
+		}
 	
-	
+		redirectattributes.addAttribute("status",msg);
+		
+		return "redirect:/";
 	}
 	
 }
