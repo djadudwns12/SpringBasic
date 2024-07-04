@@ -2,7 +2,9 @@ package com.mbcac.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -71,5 +74,32 @@ public class HomeController {
 		return "redirect:/ex1"; // 로그인후 다시 돌아갈때
 		
 		
+	}
+	@RequestMapping("/ex5")
+	public ModelAndView exModelAndView() {
+		
+		System.out.println("exModelAndView.............");
+		
+		Map model = new HashMap<String, String>();
+		
+		model.put("name", "둘리");
+		model.put("name1", "도우너");
+		model.put("name2", "고길동");
+		model.put("name3", "팬더");
+		
+		
+		ModelAndView mav = new ModelAndView("ex5",model);
+		
+		
+		/*
+		 * ModelAndView mav = new ModelAndView();
+		 * mav.setView("ex5");
+		 * 	mav.addObject("name", model);
+		 * 로 표현가능
+		 * 
+		 * */
+		
+		
+		return mav;
 	}
 }
