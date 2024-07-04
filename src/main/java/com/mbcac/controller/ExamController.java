@@ -83,7 +83,9 @@ public class ExamController
 			msg = "success";
 		}
 	
-		redirectattributes.addAttribute("status",msg);
+//		redirectattributes.addAttribute("status",msg); // status 라는 변수의 값이 msg로...( 쿼리 스트링에 변수의 값이 보임)
+		// status 라는 변수의 값이 msg로...( 쿼리 스트링에 추가되지않고 그냥바인딩)
+		redirectattributes.addFlashAttribute("status",msg); // 바인딩은 되나 쿼리스트링으로는 안보임(그냥 바인딩 됨) / 
 		
 		return "redirect:/";
 	}
