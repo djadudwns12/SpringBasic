@@ -22,6 +22,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<P>  The time on the server is ${status}. </P>
+<P>  상태는 :  ${status}. </P>
 </body>
 </html>
