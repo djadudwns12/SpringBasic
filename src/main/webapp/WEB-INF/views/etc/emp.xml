@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- 메타 태그 -->
+<!-- html과 조상이 같다.(태그구조)  -->
+<emp>
+    <empno>7369</empno>
+    <ename>smith</ename>
+    <job>manger</job>
+    <mgr>7330</mgr>
+    <hiredate>2023-12-12</hiredate>
+    <sal>1000</sal>
+    <comm>0</comm>
+    <deptNo>10</deptNo>
+</emp>
+
+
+    <!-- private int empno;
+	private String ename;
+	private String job;
+	private String mgr;
+	private date hiredate;
+	private int  sal;
+	private int  comm;
+	private int deptNo;
+	
+	new Emp(7369,"smith","manger",7330,2023-12-12,1000,0,10); -->
