@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mbcac.model.ProductVO;
@@ -89,5 +90,22 @@ public class ExamController
 		
 		return "redirect:/";
 	}
+	
+	// productvo객체를 json으로 변환하여 출력하여 보기
+	@RequestMapping(value = "/outputJsonProduct" ,produces = "application")
+	public @ResponseBody ProductVO outputJsonProduct() 
+	{
+		// 위의 반환값 타입에 @ResponseBody ProductVO(ProductVO객체를 json으로 변환하여 반환하라는 의미)
+		ProductVO p = new ProductVO("240705_2", "양파링", 2, 2500, "맛나용");
+		
+		
+		return p;
+		
+		
+		
+	}
+	
+	
+	
 	
 }
